@@ -2,6 +2,7 @@ Cairo Telco: A Secure Enterprise Network Simulation
 Welcome to my Cairo Telco network project! This is a comprehensive simulation I built in Cisco Packet Tracer to design and implement a secure, scalable, and robust network for a growing company.
 
 The Challenge
+
 The scenario involves a fictional company, Cairo Telco, which occupies two floors and has multiple departments. They needed a complete network infrastructure from the ground up. The main requirements were high performance, strong security, scalability for future growth, and reliable connectivity to their Microsoft Azure cloud services.
 
 

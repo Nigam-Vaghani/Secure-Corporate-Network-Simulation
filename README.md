@@ -34,8 +34,8 @@ Here are some of the key decisions and features I implemented:
 ## Network Topology
 
 ![Network Topology Diagram](screenshot1.png)
-![part 1]((screenshot2.png)
-![part 2]((screenshot3.png)
+![part 1](screenshot2.png)
+![part 2](screenshot3.png)
 
 
 

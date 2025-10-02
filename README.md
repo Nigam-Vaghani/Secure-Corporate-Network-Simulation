@@ -33,9 +33,11 @@ Here are some of the key decisions and features I implemented:
 
 ## Network Topology
 
-Here's a visual look at the final network design. For this image to display correctly on GitHub, ensure `image_2d2edf.png` is in the same repository.
+![Network Topology Diagram](screenshot1.png)
+![part 1]((screenshot2.png)
+![part 2]((screenshot3.png)
 
-![Network Topology Diagram](image_2d2edf.png)
+
 
 ### IP Addressing Plan
 

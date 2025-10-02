@@ -1,71 +1,55 @@
-Cairo Telco: A Secure Enterprise Network Simulation
-Welcome to my Cairo Telco network project! This is a comprehensive simulation I built in Cisco Packet Tracer to design and implement a secure, scalable, and robust network for a growing company.
+Designed and implemented a secure, scalable, and reliable enterprise network for a fictional company (Cairo Telco) using Cisco Packet Tracer. The project aimed to meet organizational requirements of high performance, robust security, seamless cloud connectivity, and future scalability.
 
 The Challenge
 
-The scenario involves a fictional company, Cairo Telco, which occupies two floors and has multiple departments. They needed a complete network infrastructure from the ground up. The main requirements were high performance, strong security, scalability for future growth, and reliable connectivity to their Microsoft Azure cloud services.
+Cairo Telco operates across two floors with multiple departments.
 
+Needed a complete network infrastructure from the ground up.
 
+Key requirements: performance, security, scalability, and Azure cloud connectivity.
 
-My goal was to design and configure a network that not only met these technical demands but was also well-organized and easy to manage, following best practices.
+My Approach
 
-My Approach & Key Features
-I decided to build the network using a 
+I adopted the Hierarchical Network Design Model (Core, Distribution, and Access layers) to ensure redundancy, scalability, and simplified troubleshooting.
 
-hierarchical model to ensure it was redundant and scalable. This separates the network into core, distribution, and access layers, which makes it much easier to troubleshoot and expand.
+Key Features
+🔒 Security First
 
-Here are some of the key decisions and features I implemented:
+Deployed a Cisco ASA Firewall for traffic control between LAN, DMZ, and the internet.
 
-Security First: Security was the top priority.
+Configured a DMZ zone for Email, ERP, and File servers.
 
-I placed a 
+Enabled PortFast on access ports and BPDU Guard to protect against rogue switches.
 
-Cisco ASA Firewall at the edge to manage traffic between the internal network, the internet, and a dedicated DMZ for the company's servers (Email, ERP, File Server).
+Implemented a Standard ACL to restrict SSH access exclusively to IT staff.
 
+⚡ Reliability & Performance
 
-On the switches, I enabled 
+Implemented VLAN segmentation:
 
-PortFast on access ports for faster device connectivity and BPDU Guard to prevent unauthorized switches from being added to the network.
+Data – VLAN 50
 
-I wrote a standard 
+Wireless – VLAN 60
 
-ACL to lock down SSH access, so only the IT department can manage devices remotely.
+Voice – VLAN 101
 
-Building for Reliability and Speed:
+Configured LACP EtherChannel for redundancy and higher bandwidth between switches.
 
-I segmented the network using VLANs to keep traffic for Data (VLAN 50), Wireless (VLAN 60), and Voice (VLAN 101) separate. This improves both security and performance.
+Used OSPF dynamic routing for efficient path selection.
 
+📞 Unified Communications & Services
 
-To boost performance and add redundancy between my switches, I configured 
+Integrated a VoIP system with a Cisco Voice Gateway for IP telephony.
 
-LACP EtherChannel, which bundles multiple links into one logical connection.
+Deployed a Cisco WLC for centralized wireless management.
 
-I used 
-
-OSPF as the dynamic routing protocol to ensure that all parts of the network could find the best path to communicate with each other automatically.
-
-Unified Communications & Services:
-
-The design includes a full 
-
-VoIP system, with a Cisco Voice Gateway providing telephony services to IP phones in each department.
-
-
-I set up a 
-
-centralized wireless network using a Cisco WLC to manage all the access points, providing seamless Wi-Fi across both floors.
-
-A central server handles 
-
-DHCP, so devices can get an IP address automatically , while servers in the DMZ have 
-
-static IPs.
+Configured DHCP server for automatic IP assignment; DMZ servers used static IPs.
 
 Network Topology
-Here's a visual look at the final network design:
 
-IP Addressing Plan
-This was the IP address scheme I worked with for the project:
+(Include your Packet Tracer diagram here for visualization)
+
+IP Addressing Scheme
 
 LAN: 192.168.10.0/24
 
@@ -77,9 +61,10 @@ DMZ: 10.10.10.0/28
 
 Public: 197.200.100.0
 
-Core Technologies Used
+Core Technologies
+
 Simulation Tool: Cisco Packet Tracer
 
-Key Hardware (Simulated): Cisco ASA 5525-X Firewall, Catalyst 3850 & 2960 Switches, Cisco 2811 Voice Gateway, Cisco WLC.
+Hardware (Simulated): Cisco ASA 5525-X Firewall, Catalyst 3850 & 2960 Switches, Cisco 2811 Voice Gateway, Cisco WLC
 
-Protocols & Concepts: OSPF, LACP (EtherChannel), STP (PortFast, BPDU Guard), VLANs, Inter-VLAN Routing, DHCP, VoIP, Standard ACLs, Firewall Security Zones.
+Protocols & Concepts: OSPF, VLANs, Inter-VLAN Routing, LACP (EtherChannel), STP (PortFast, BPDU Guard), DHCP, VoIP, ACLs, Firewall Security Zones

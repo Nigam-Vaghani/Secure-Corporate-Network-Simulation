@@ -1,70 +1,53 @@
-Designed and implemented a secure, scalable, and reliable enterprise network for a fictional company (Cairo Telco) using Cisco Packet Tracer. The project aimed to meet organizational requirements of high performance, robust security, seamless cloud connectivity, and future scalability.
+# Cairo Telco: A Secure Enterprise Network Simulation
 
-The Challenge
+Welcome to my Cairo Telco network project! [cite_start]This is a comprehensive simulation I built in Cisco Packet Tracer to design and implement a secure, scalable, and robust network for a growing company[cite: 25, 27, 32].
 
-Cairo Telco operates across two floors with multiple departments.
+## The Challenge
 
-Needed a complete network infrastructure from the ground up.
+[cite_start]The scenario involves a fictional company, Cairo Telco, a fast-growing telecommunication company in Cairo, Egypt[cite: 5, 6]. [cite_start]The company occupies the fourth and fifth floors of a building, hosting six different departments: HR and Finance, Product Brand and Marketing, Admin and Corporate, IT Network & Support, Software Engineering, and Cloud Engineering[cite: 7, 8, 9, 10].
 
-Key requirements: performance, security, scalability, and Azure cloud connectivity.
+They needed a complete network infrastructure from the ground up. [cite_start]The main requirements were high performance, redundancy, scalability, and availability[cite: 29]. [cite_start]A critical part of the project was ensuring secure connectivity to their Microsoft Azure cloud resources, which are core to their business functions[cite: 20, 21, 22].
 
-My Approach
+[cite_start]My goal was to design and configure a network that not only met these technical demands but was also well-organized and easy to manage, following best practices[cite: 26].
 
-I adopted the Hierarchical Network Design Model (Core, Distribution, and Access layers) to ensure redundancy, scalability, and simplified troubleshooting.
+## My Approach & Key Features
 
-Key Features
-🔒 Security First
+[cite_start]I decided to build the network using a **hierarchical model** to ensure it was redundant and scalable[cite: 33]. This separates the network into core, distribution, and access layers, which makes it much easier to troubleshoot and expand.
 
-Deployed a Cisco ASA Firewall for traffic control between LAN, DMZ, and the internet.
+Here are some of the key decisions and features I implemented:
 
-Configured a DMZ zone for Email, ERP, and File servers.
+* **Security First:** Security was the top priority.
+    * [cite_start]I placed a **Cisco ASA Firewall** at the edge to manage traffic between the internal network, the internet, and a dedicated DMZ for the company's servers[cite: 24, 52]. [cite_start]The DMZ hosts the internally hosted ERP system, Email server, and File server[cite: 16, 17].
+    * [cite_start]On the switches, I enabled **STP PortFast** on access ports for faster device connectivity and **BPDU Guard** to prevent unauthorized switches from being added to the network[cite: 39, 56].
+    * [cite_start]I wrote a standard **ACL to lock down SSH access**, so only the ICT department can manage devices remotely[cite: 51].
 
-Enabled PortFast on access ports and BPDU Guard to protect against rogue switches.
+* **Building for Reliability and Speed:**
+    * [cite_start]I segmented the network using **VLANs** to keep traffic for LAN (VLAN 50), WLAN (VLAN 60), and Voice (VLAN 101) separate[cite: 23, 37, 55]. This improves both security and performance.
+    * [cite_start]To boost performance and add redundancy between my switches, I configured **LACP EtherChannel**, which bundles multiple links into one logical connection[cite: 38, 56].
+    * [cite_start]I used **OSPF** as the dynamic routing protocol to ensure that all parts of the network could find the best path to communicate with each other automatically[cite: 50, 58].
 
-Implemented a Standard ACL to restrict SSH access exclusively to IT staff.
+* **Unified Communications & Services:**
+    * [cite_start]The design includes a full **VoIP system**, with a Cisco Voice Gateway providing telephony services to IP phones in each department[cite: 17, 18, 36, 49].
+    * [cite_start]I set up a **centralized wireless network** using a Cisco Wireless LAN Controller (WLC) to manage all the access points, providing seamless Wi-Fi across both floors[cite: 18, 19, 35].
+    * [cite_start]A central Windows Server 2022 handles **Active Directory, DNS, and DHCP**, so devices can get an IP address automatically [cite: 14, 15, 16, 45][cite_start], while servers in the DMZ have **static IPs**[cite: 47, 57].
 
-⚡ Reliability & Performance
+## Network Topology
 
-Implemented VLAN segmentation:
+Here's a visual look at the final network design. For this image to display correctly on GitHub, ensure `image_2d2edf.png` is in the same repository.
 
-Data – VLAN 50
+![Network Topology Diagram](image_2d2edf.png)
 
-Wireless – VLAN 60
+### IP Addressing Plan
 
-Voice – VLAN 101
+[cite_start]This was the IP address scheme I was given for the project[cite: 30]:
+* [cite_start]**WLAN:** `10.20.0.0/16` [cite: 30]
+* [cite_start]**LAN:** `192.168.10.0/24` [cite: 30]
+* [cite_start]**Voice:** `172.16.10.0/24` [cite: 30]
+* [cite_start]**DMZ:** `10.10.10.0/28` [cite: 30]
+* [cite_start]**Public:** `197.200.100.0` [cite: 30]
 
-Configured LACP EtherChannel for redundancy and higher bandwidth between switches.
+### Core Technologies Used
 
-Used OSPF dynamic routing for efficient path selection.
-
-📞 Unified Communications & Services
-
-Integrated a VoIP system with a Cisco Voice Gateway for IP telephony.
-
-Deployed a Cisco WLC for centralized wireless management.
-
-Configured DHCP server for automatic IP assignment; DMZ servers used static IPs.
-
-Network Topology
-
-(Include your Packet Tracer diagram here for visualization)
-
-IP Addressing Scheme
-
-LAN: 192.168.10.0/24
-
-WLAN: 10.20.0.0/16
-
-Voice: 172.16.10.0/24
-
-DMZ: 10.10.10.0/28
-
-Public: 197.200.100.0
-
-Core Technologies
-
-Simulation Tool: Cisco Packet Tracer
-
-Hardware (Simulated): Cisco ASA 5525-X Firewall, Catalyst 3850 & 2960 Switches, Cisco 2811 Voice Gateway, Cisco WLC
-
-Protocols & Concepts: OSPF, VLANs, Inter-VLAN Routing, LACP (EtherChannel), STP (PortFast, BPDU Guard), DHCP, VoIP, ACLs, Firewall Security Zones
+* [cite_start]**Simulation Tool:** Cisco Packet Tracer [cite: 32]
+* [cite_start]**Key Hardware (Simulated):** Cisco ASA 5525-X Firewall [cite: 12][cite_start], Catalyst 3850 & 2960 Switches [cite: 12, 13][cite_start], Cisco 2811 Voice Gateway [cite: 46][cite_start], Cisco WLC, and Lightweight APs[cite: 14].
+* [cite_start]**Protocols & Concepts:** OSPF [cite: 50][cite_start], LACP EtherChannel [cite: 38][cite_start], STP (PortFast, BPDU Guard) [cite: 39][cite_start], VLANs [cite: 37][cite_start], Inter-VLAN Routing [cite: 42][cite_start], DHCP [cite: 45][cite_start], VoIP [cite: 36][cite_start], Standard ACLs [cite: 51][cite_start], Firewall Security Zones[cite: 52].
